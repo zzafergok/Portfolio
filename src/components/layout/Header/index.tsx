@@ -1,14 +1,19 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+
+import { useState } from 'react';
+
 import { Menu, X } from 'lucide-react';
-import { cn, isActiveRoute } from '@/utils/helpers';
-import { useWindowSize, isLessThan } from '@/hooks/useWindowSize';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
+
+import { useWindowSize, isLessThan } from '@/hooks/useWindowSize';
+
 import type { HeaderProps } from '@/types';
+import { cn, isActiveRoute } from '@/utils/helpers';
 
 /**
  * Header component with responsive navigation
@@ -16,8 +21,9 @@ import type { HeaderProps } from '@/types';
 const Header = ({ className }: HeaderProps) => {
   const pathname = usePathname();
   const { width } = useWindowSize();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = isLessThan('md', width);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Navigation items
   const navItems = [

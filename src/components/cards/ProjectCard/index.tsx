@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+
 import { cn } from '@/utils/helpers';
 import type { ProjectCardProps } from '@/types';
 
@@ -10,12 +12,12 @@ import type { ProjectCardProps } from '@/types';
  * Project card component for showcasing portfolio projects
  */
 const ProjectCard = ({
+  href,
   title,
+  image,
+  className,
   description,
   technologies,
-  image,
-  href,
-  className,
 }: ProjectCardProps) => {
   return (
     <Link href={href} className="block h-full">

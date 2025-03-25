@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+
 import { cn } from '@/utils/helpers';
 import type { BlogCardProps } from '@/types';
 
@@ -10,13 +12,13 @@ import type { BlogCardProps } from '@/types';
  * Blog card component for showcasing blog posts
  */
 const BlogCard = ({
-  title,
-  description,
   date,
-  readTime,
-  image,
   href,
+  title,
+  image,
+  readTime,
   className,
+  description,
 }: BlogCardProps) => {
   return (
     <Link href={href} className="block h-full">

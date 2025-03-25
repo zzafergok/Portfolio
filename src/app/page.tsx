@@ -1,9 +1,9 @@
 'use client';
 
+import BaseCard from '@/components/cards/BaseCard';
+
 import { motion } from 'framer-motion';
 import { Folder, Code, FileEdit, Phone, ArrowRight } from 'lucide-react';
-import DashboardLayout from '@/components/layout/DashboardLayout';
-import BaseCard from '@/components/cards/BaseCard';
 
 /**
  * Dashboard page component that serves as homepage

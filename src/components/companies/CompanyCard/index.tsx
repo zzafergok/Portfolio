@@ -1,10 +1,13 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useState } from 'react';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, Building } from 'lucide-react';
+
 import { Company } from '@/data/companies';
-import Image from 'next/image';
 import { getValidImageUrl } from '@/utils/helpers';
 
 interface CompanyCardProps {

@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { motion } from 'framer-motion';
+
 import { cn } from '@/utils/helpers';
 import type { SkillsCardProps } from '@/types';
 

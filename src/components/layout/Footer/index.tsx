@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+
 import { Github, Linkedin } from 'lucide-react';
+
 import { cn } from '@/utils/helpers';
 import type { FooterProps } from '@/types';
 

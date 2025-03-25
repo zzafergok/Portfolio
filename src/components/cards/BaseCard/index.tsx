@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 import { ExternalLink, ChevronRight } from 'lucide-react';
+
 import { cn } from '@/utils/helpers';
 import type { CardProps } from '@/types';
 
@@ -10,12 +12,12 @@ import type { CardProps } from '@/types';
  * Base card component for dashboard items
  */
 const BaseCard = ({
-  title,
-  description,
   href,
   icon,
+  title,
   bgColor,
   className,
+  description,
 }: CardProps) => {
   return (
     <Link href={href} className="block h-full">

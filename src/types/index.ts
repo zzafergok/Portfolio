@@ -1,61 +1,61 @@
 export interface NavItem {
   id: string;
-  title: string;
   href: string;
-  icon?: React.ReactNode;
-  description?: string;
+  title: string;
   bgColor?: string;
+  description?: string;
+  icon?: React.ReactNode;
 }
 
 export interface CardProps {
-  title: string;
-  description: string;
   href: string;
-  icon?: React.ReactNode;
+  title: string;
   bgColor?: string;
   className?: string;
+  description: string;
+  icon?: React.ReactNode;
 }
 
 export interface ProjectCardProps {
+  href: string;
   title: string;
+  image?: string;
+  className?: string;
   description: string;
   technologies: string[];
-  image?: string;
-  href: string;
-  className?: string;
 }
 
 export interface BlogCardProps {
-  title: string;
-  description: string;
   date: string;
-  readTime: string;
-  image?: string;
   href: string;
+  title: string;
+  image?: string;
+  readTime: string;
   className?: string;
+  description: string;
 }
 
 export interface SkillsCardProps {
   category: string;
   skills: string[];
-  icon?: React.ReactNode;
   className?: string;
+  icon?: React.ReactNode;
 }
 
 export interface ContactCardProps {
-  method: string;
   value: string;
-  icon: React.ReactNode;
   href?: string;
+  method: string;
   className?: string;
+  icon: React.ReactNode;
 }
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
   className?: string;
+  size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
 }
 
 export interface ThemeSwitcherProps {

@@ -2,7 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { useState, useEffect } from 'react';
+
 import {
   X,
   Cat,
@@ -13,7 +15,9 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
+
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
+
 import type { SidebarProps } from '@/types';
 import { cn, isActiveRoute } from '@/utils/helpers';
 
@@ -29,13 +33,13 @@ interface ExtendedSidebarProps extends SidebarProps {
 
 const Sidebar = ({
   className,
+  onMobileClose,
   isMobile = false,
   isCollapsible = true,
-  onMobileClose,
 }: ExtendedSidebarProps) => {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   // Mount state to avoid hydration mismatch
   useEffect(() => {

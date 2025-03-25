@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'framer-motion';
+
 import { cn } from '@/utils/helpers';
 import type { ContactCardProps } from '@/types';
 
@@ -9,10 +11,10 @@ import type { ContactCardProps } from '@/types';
  * Contact card component for displaying contact information
  */
 const ContactCard = ({
-  method,
-  value,
   icon,
   href,
+  value,
+  method,
   className,
 }: ContactCardProps) => {
   const CardContent = () => (
