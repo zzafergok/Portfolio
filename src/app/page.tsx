@@ -3,7 +3,7 @@
 import BaseCard from '@/components/cards/BaseCard';
 
 import { motion } from 'framer-motion';
-import { Folder, Code, FileEdit, Phone, ArrowRight } from 'lucide-react';
+import { Cat, Code, Phone, Folder, FileEdit, ArrowRight } from 'lucide-react';
 
 /**
  * Dashboard page component that serves as homepage
@@ -58,38 +58,61 @@ export default function Dashboard() {
 
   return (
     <div>
-      {/* Hero section */}
+      {/* Hero section with the integrated welcome text */}
       <motion.section variants={childVariants} className="mb-16 text-center">
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-5xl lg:text-6xl">
+        <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-5xl lg:text-6xl">
           <span className="bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
-            Merhaba!
-          </span>{' '}
-          Ben bir{' '}
-          <span className="bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
-            Frontend Developer
+            Dijital Dünyama Hoş Geldiniz 🌟
           </span>
-          'ım
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-xl leading-relaxed text-neutral-600 dark:text-neutral-300">
-          Next.js, TypeScript ve Tailwind CSS ile modern web uygulamaları
-          geliştiriyor, kullanıcı deneyimini ön planda tutuyorum.
-        </p>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <a
-            href="/contact"
-            className="inline-flex items-center rounded-lg bg-primary-600 px-6 py-3 text-center text-base font-medium text-white shadow-lg transition-all hover:bg-primary-700 focus:ring-4 focus:ring-primary-300"
-          >
-            İletişime Geç
-            <ArrowRight size={20} className="ml-2" />
-          </a>
-        </motion.div>
+
+        <div className="mx-auto max-w-7xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300 space-y-4">
+          <p>
+            İstanbul'un enerjisinden ilham alıp, Ankara'nın dinginliğinde kod
+            yazan bir geliştiricinin sanal evindeyim. Ekranınızın diğer ucundan
+            merhaba! 🖐️
+          </p>
+
+          <p>
+            Teknoloji yolculuğumda Next.js ve React ile ördüğüm bu dijital
+            bahçede, her bir komponent özenle tasarlandı. Tailwind'in estetik
+            dokunuşları, TypeScript'in disiplinli yapısı ve Redux'un düzenli
+            veri akışı, kod yazarken vazgeçilmez paletimi oluşturuyor. Her
+            satır, her fonksiyon, dört yıllık tutkulu bir uğraşın yansıması.
+          </p>
+
+          <div className="flex justify-center items-center space-x-2 my-4">
+            <p className="italic">
+              Navigasyon menüsündeki hayvan ikonları, evimde miyavlayan iki
+              tüylü dostumun dijital dünyaya selamı. Kedilerimin meraklı
+              bakışlarının kod yazarken ilham verdiği anlar, bu sitenin ruhuna
+              işlendi. 🐱🐱
+            </p>
+          </div>
+
+          <p>
+            İstanbul Aydın'ın koridorlarında başlayan bilgisayar programcılığı
+            serüvenim, şimdi Ankara'nın sokaklarında, yeni teknolojilerin
+            peşinde devam ediyor. Her geçen gün öğrendiğim her yeni konsept, bu
+            platformun dokusuna katılıyor.
+          </p>
+
+          <p>
+            Bu dashboard, sadece bir gösterge paneli değil, dijital bir buluşma
+            noktası. Projelerim, düşüncelerim ve yaratıcı çalışmalarım arasında
+            gezinirken, kodun sadece bir araç değil, bir ifade biçimi olduğunu
+            keşfedeceğinizi umuyorum.
+          </p>
+
+          <p className="font-medium">
+            Kedilerimin patileri kadar hassas, Ankara'nın gökyüzü kadar geniş
+            bir vizyon ile hazırlanan bu dijital mekana hoş geldiniz.
+          </p>
+        </div>
       </motion.section>
 
       {/* Dashboard cards */}
       <motion.section variants={childVariants}>
-        <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-3xl">
-          Keşfedin
-        </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
             <motion.div key={card.id} variants={childVariants}>
