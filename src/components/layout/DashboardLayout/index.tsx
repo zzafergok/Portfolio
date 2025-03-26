@@ -134,7 +134,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
               isMobile
                 ? 'fixed left-0 top-0 h-full z-50 w-52 dark:border-neutral-800 '
                 : `absolute ${isCollapsed ? 'w-20' : 'w-52'} h-[500px] mt-[15%] dark:border-stone-800 `
-            } bg-white dark:bg-neutral-900 shadow-lg border rounded-lg transition-width duration-[800ms] ease-out shrink-0 overflow-hidden`}
+            } bg-white dark:bg-neutral-800 shadow-lg border rounded-lg transition-width duration-[800ms] ease-out shrink-0 overflow-hidden`}
           >
             <Sidebar
               isMobile={isMobile}
@@ -154,7 +154,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             variants={containerVariants}
             className={`flex-1 overflow-y-auto ${
               isMobile
-                ? 'px-4 py-16' // Extra top padding for mobile to avoid hamburger overlap
+                ? 'px-4 py-24' // Extra top padding for mobile to avoid hamburger overlap
                 : `${isCollapsed ? 'md:pl-8' : 'md:pl-60'} px-6 py-8 md:pr-8 md:py-12`
             } transition-all duration-[800ms] ease-out`}
           >
