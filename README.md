@@ -1,4 +1,19 @@
+# Next.js Portfolio Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Technical Requirements
+
+- Node.js version: v22.11.0
+- npm version: 10.9.0
+
+## Features
+
+- **Modern UI Components**: Custom-designed cards, sidebar, and navigation elements with Tailwind CSS styling
+- **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop devices
+- **Theme Switching**: Dark and light mode support with persistent user preferences
+- **Live Date and Time Display**: Real-time date and time indicator in the footer that updates every second and displays in Turkish locale format
+- **Social Media Integration**: GitHub and LinkedIn profile links built into the footer
 
 ## Getting Started
 
