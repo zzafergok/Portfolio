@@ -84,8 +84,6 @@ export const getValidImageUrl = (src: string): string | null => {
     new URL(src);
     return src;
   } catch (error) {
-    // If URL construction fails, return null
-    console.warn(`Invalid image URL: ${src}`);
     return null;
   }
 };
