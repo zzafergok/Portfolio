@@ -1,6 +1,34 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
+  webpack: (config) => {
+    // react-pdf için gerekli worker ayarları
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
+
+    // PDF için dosya yükleme desteği
+    config.module.rules.push({
+      test: /\.(pdf)$/i,
+      type: 'asset/resource',
+    });
+
+    return config;
+  },
+  // PDF dosyalarını public klasöründen servis ettiğimizden emin oluyoruz
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

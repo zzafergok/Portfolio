@@ -89,8 +89,8 @@ const Sidebar = ({
       icon: <Dog className="h-5 w-5" />,
     },
     {
-      href: '/skills',
-      label: 'Yetenekler',
+      href: '/resume',
+      label: 'Özgeçmiş',
       icon: <Bird className="h-5 w-5" />,
     },
     { href: '/blog', label: 'Blog', icon: <Squirrel className="h-5 w-5" /> },
@@ -148,7 +148,9 @@ const Sidebar = ({
         {/* Navigation */}
         <nav className="mt-5 flex-1 space-y-1 px-2">
           {navItems.map((item) => {
-            const isActive = isActiveRoute(pathname, item.href);
+            const isActive = pathname
+              ? isActiveRoute(pathname, item.href)
+              : false;
             return (
               <Link
                 key={item.href}
