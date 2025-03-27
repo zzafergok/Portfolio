@@ -8,7 +8,7 @@ import { useWindowSize } from '@/hooks/useWindowSize';
 import DownloadButton from './DownloadButton';
 import { PDFControls } from './PDFControls';
 import PDFPageCounter from './PDFPageCounter';
-import type { PDFDocumentProxy } from 'pdfjs-dist';
+import type { PDFDocumentProxy as ReactPDFDocumentProxy } from 'pdfjs-dist';
 import { Spinner } from '@/components/ui/Spinner';
 
 // PDF worker configuration
@@ -49,16 +49,28 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
   // Responsive scaling based on viewport width - mobil için daha uygun ölçekleme
   useEffect(() => {
     if (width) {
-      setScale(0.75);
+      if (width < 480) {
+        // Çok küçük ekranlar için daha agresif ölçekleme
+        setScale(0.45);
+      } else if (width < 640) {
+        setScale(0.55);
+      } else if (width < 768) {
+        setScale(0.75);
+      } else if (width < 1024) {
+        setScale(0.9);
+      } else {
+        setScale(1.1);
+      }
     }
   }, [width]);
 
-  const onDocumentLoadSuccess = ({ numPages }: PDFDocumentProxy) => {
-    setNumPages(numPages);
+  const onDocumentLoadSuccess = (document: ReactPDFDocumentProxy) => {
+    setNumPages(document.numPages);
     setLoading(false);
   };
 
   const onDocumentLoadError = (error: Error) => {
+    console.error('PDF yüklenirken hata oluştu:', error);
     setError(
       'PDF dosyası yüklenemedi. Lütfen dosya yolunun doğru olduğundan emin olun.'
     );
