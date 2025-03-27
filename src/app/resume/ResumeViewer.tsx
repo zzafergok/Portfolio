@@ -1,18 +1,25 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+
 import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
+
 import { useWindowSize } from '@/hooks/useWindowSize';
-import DownloadButton from './DownloadButton';
+
 import { PDFControls } from './PDFControls';
 import PDFPageCounter from './PDFPageCounter';
-import type { PDFDocumentProxy as ReactPDFDocumentProxy } from 'pdfjs-dist';
+import DownloadButton from './DownloadButton';
+
 import { Spinner } from '@/components/ui/Spinner';
 
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+
+interface OnDocumentLoadSuccess {
+  (document: { numPages: number }): void;
+}
+
 // PDF worker configuration
-// Bu satır çok önemli - worker'ı doğru şekilde yapılandırıyoruz
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 interface ResumeViewerProps {
@@ -24,12 +31,13 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
   pdfUrl,
   title = 'Özgeçmiş',
 }) => {
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageNumber, setPageNumber] = useState<number>(1);
+  const { width } = useWindowSize();
+
+  const [scale, setScale] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [scale, setScale] = useState<number>(1);
-  const { width } = useWindowSize();
+  const [pageNumber, setPageNumber] = useState<number>(1);
+  const [numPages, setNumPages] = useState<number | null>(null);
 
   // Client tarafında olduğumuzdan emin olmak için state'i tutuyoruz
   const [isClient, setIsClient] = useState(false);
@@ -48,29 +56,15 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
 
   // Responsive scaling based on viewport width - mobil için daha uygun ölçekleme
   useEffect(() => {
-    if (width) {
-      if (width < 480) {
-        // Çok küçük ekranlar için daha agresif ölçekleme
-        setScale(0.45);
-      } else if (width < 640) {
-        setScale(0.55);
-      } else if (width < 768) {
-        setScale(0.75);
-      } else if (width < 1024) {
-        setScale(0.9);
-      } else {
-        setScale(1.1);
-      }
-    }
-  }, [width]);
+    setScale(0.8);
+  }, []);
 
-  const onDocumentLoadSuccess = (document: ReactPDFDocumentProxy) => {
+  const onDocumentLoadSuccess: OnDocumentLoadSuccess = (document) => {
     setNumPages(document.numPages);
     setLoading(false);
   };
 
   const onDocumentLoadError = (error: Error) => {
-    console.error('PDF yüklenirken hata oluştu:', error);
     setError(
       'PDF dosyası yüklenemedi. Lütfen dosya yolunun doğru olduğundan emin olun.'
     );
@@ -87,7 +81,6 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
     );
   };
 
-  // PDF seçeneklerini memoize ediyoruz
   const pdfOptions = useMemo(
     () => ({
       cMapUrl: 'https://unpkg.com/pdfjs-dist@3.4.120/cmaps/',
@@ -96,7 +89,6 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
     []
   );
 
-  // Client tarafında değilsek hiçbir şey render etme
   if (!isClient) {
     return (
       <div className="flex justify-center items-center w-full h-64">
@@ -107,7 +99,9 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
 
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto my-4 sm:my-8 px-2 sm:px-4">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">{title}</h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-800 dark:text-neutral-200">
+        {title}
+      </h1>
 
       <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-full">
         <div className="bg-gray-100 p-2 sm:p-4 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between items-start sm:items-center space-y-2 sm:space-y-0">
@@ -169,15 +163,13 @@ export const ResumeViewer: React.FC<ResumeViewerProps> = ({
                 options={pdfOptions}
               >
                 <Page
-                  pageNumber={pageNumber}
-                  scale={scale}
                   loading=""
+                  scale={scale}
                   renderTextLayer={true}
+                  pageNumber={pageNumber}
                   renderAnnotationLayer={true}
-                  className="mb-4 sm:mb-8 rounded-md shadow-md bg-white"
                   width={width ? Math.min(width - 40, 1000) : undefined}
-                  canvasClassName="max-w-full h-auto rounded-md"
-                  containerClassName="flex justify-center w-full overflow-hidden px-1"
+                  className="mb-4 sm:mb-8 rounded-md shadow-md bg-white dark:bg-gray-800"
                 />
               </Document>
             </div>
