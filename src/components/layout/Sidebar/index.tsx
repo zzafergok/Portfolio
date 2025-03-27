@@ -41,7 +41,6 @@ const Sidebar = ({
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   const [isMounted, setIsMounted] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   // Mount state to avoid hydration mismatch
