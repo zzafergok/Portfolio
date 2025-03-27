@@ -61,13 +61,13 @@ const Header = ({ className }: HeaderProps) => {
                 href={item.href}
                 className={cn(
                   'relative py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-primary-400',
-                  isActiveRoute(pathname, item.href)
+                  pathname && isActiveRoute(pathname, item.href)
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-secondary-700 dark:text-secondary-300'
                 )}
               >
                 {item.label}
-                {isActiveRoute(pathname, item.href) && (
+                {pathname && isActiveRoute(pathname, item.href) && (
                   <motion.div
                     layoutId="activeNavIndicator"
                     className="absolute -bottom-[1px] left-0 h-[2px] w-full bg-primary-600 dark:bg-primary-400"
@@ -118,7 +118,7 @@ const Header = ({ className }: HeaderProps) => {
                   onClick={() => setIsMenuOpen(false)}
                   className={cn(
                     'py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-primary-400',
-                    isActiveRoute(pathname, item.href)
+                    pathname && isActiveRoute(pathname, item.href)
                       ? 'text-primary-600 dark:text-primary-400'
                       : 'text-secondary-700 dark:text-secondary-300'
                   )}
