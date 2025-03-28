@@ -1,0 +1,321 @@
+{
+  "categories": [
+    {
+      "id": "professional",
+      "title": "Profesyonel Projeler",
+      "icon": "Briefcase",
+      "description": "4 yıllık frontend developer kariyerimde çalıştığım kurumsal projeler",
+      "projects": [
+        {
+          "id": "kargopratik",
+          "title": "KargoPratik",
+          "description": "",
+          "date": {
+            "start": "2021-03",
+            "end": "2021-10"
+          },
+          "technologies": ["React.js", "Javascript", "Ant Design", "Github"],
+          "company": "DigitalAct",
+          "url": "",
+          "image": "/images/projects/kargopratik.jpg"
+        },
+        {
+          "id": "imtek-website",
+          "title": "İmtek Kurumsal Web Sitesi",
+          "description": "selam",
+          "date": {
+            "start": "2023-10",
+            "end": "2022-06"
+          },
+          "technologies": [
+            "React.js",
+            "TypeScript",
+            "Evergreen UI",
+            "Styled Components"
+          ],
+          "company": "İmtek Mühendislik",
+          "url": "https://imtek.com.tr",
+          "image": "/images/projects/imtek.jpg"
+        },
+        {
+          "id": "fantazzie",
+          "title": "Fantazzie.com",
+          "description": "",
+          "date": {
+            "start": "2022-10",
+            "end": "2022-12"
+          },
+          "technologies": [
+            "React.js",
+            "JavaScript",
+            "Styled Components",
+            "React Query",
+            "Rest APIs",
+            "Github"
+          ],
+          "company": "Venhancer",
+          "url": "https://fantazzie.com",
+          "image": "/images/projects/fantazzie.jpg"
+        },
+        {
+          "id": "edenred-tol",
+          "title": "Edenred TOL (Yeni Arayüz)",
+          "description": "",
+          "date": {
+            "start": "2023-01",
+            "end": "2023-12"
+          },
+          "technologies": [
+            "React.js",
+            "Redux",
+            "vite",
+            "TypeScript",
+            "Material UI",
+            "Azure Boards"
+          ],
+          "company": "Venhancer",
+          "url": "",
+          "image": "/images/projects/edenred-tol.jpg"
+        },
+        {
+          "id": "it-helpdesk",
+          "title": "IT Helpdesk",
+          "description": "",
+          "date": {
+            "start": "2023-02",
+            "end": "2022-09"
+          },
+          "technologies": [
+            "Strategic Thinking",
+            "Vendor Management",
+            "Problem Solving",
+            "Communication",
+            "Interpersonal Skills",
+            "Budget Management",
+            "IT Hardware Support"
+          ],
+          "company": "Venhancer",
+          "url": "",
+          "image": "/images/projects/it-helpdesk.jpg"
+        },
+        {
+          "id": "fiba-banka",
+          "title": "Fiba Banka Alış & Gidiş",
+          "description": "",
+          "date": {
+            "start": "2022-03",
+            "end": "2022-06"
+          },
+          "technologies": ["React Native Web", "Redux", "TypeScript"],
+          "company": "Venhancer",
+          "url": "",
+          "image": "/images/projects/fiba-banka.jpg"
+        },
+        {
+          "id": "payfix",
+          "title": "Payfix",
+          "description": "",
+          "date": {
+            "start": "2024-01",
+            "end": "present"
+          },
+          "technologies": [
+            "React.js",
+            "Redux",
+            "TypeScript",
+            "reactstrap",
+            "Azure Boards",
+            "Rest APIs",
+            "JIRA"
+          ],
+          "company": "PozitifTech",
+          "url": "",
+          "image": "/images/projects/payfix.jpg"
+        },
+        {
+          "id": "payfix-redesign",
+          "title": "Payfix Yeni Tasarım",
+          "description": "",
+          "date": {
+            "start": "2024-01",
+            "end": "present"
+          },
+          "technologies": [
+            "Next.js",
+            "Redux",
+            "TypeScript",
+            "Tailwind CSS",
+            "radix-ui",
+            "Rest APIs",
+            "JIRA"
+          ],
+          "company": "PozitifTech",
+          "url": "",
+          "image": "/images/projects/payfix-redesign.jpg"
+        },
+        {
+          "id": "cashfix-backoffice",
+          "title": "Cashfix Backoffice",
+          "description": "",
+          "date": {
+            "start": "2024-01",
+            "end": "present"
+          },
+          "technologies": [
+            "Next.js",
+            "Redux",
+            "TypeScript",
+            "Tailwind CSS",
+            "Rest APIs",
+            "JIRA",
+            "Azure Boards"
+          ],
+          "company": "PozitifTech",
+          "url": "",
+          "image": "/images/projects/cashfix-backoffice.jpg"
+        },
+        {
+          "id": "cashfix-web",
+          "title": "Cashfix Public Web",
+          "description": "",
+          "date": {
+            "start": "2024-01",
+            "end": "present"
+          },
+          "technologies": [
+            "Next.js",
+            "Redux",
+            "TypeScript",
+            "Tailwind CSS",
+            "Rest APIs",
+            "JIRA",
+            "Azure Boards"
+          ],
+          "company": "PozitifTech",
+          "url": "",
+          "image": "/images/projects/cashfix-web.jpg"
+        }
+      ]
+    },
+    {
+      "id": "freelance",
+      "title": "Freelance Projeler",
+      "icon": "Gem",
+      "description": "Bağımsız olarak yürüttüğüm sektördeki ilk projelerim",
+      "projects": [
+        {
+          "id": "manas-disli",
+          "title": "Manas Dişli",
+          "description": "",
+          "date": {
+            "start": "2019-02",
+            "end": "2019-03"
+          },
+          "technologies": ["HTML", "CSS"],
+          "company": "Freelance",
+          "url": "",
+          "image": "/images/projects/manas-disli.jpg"
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "title": "Kişisel Projeler",
+      "icon": "Lightbulb",
+      "description": "Kendimi geliştirmek için çalıştığım bireysel projeler",
+      "projects": [
+        {
+          "id": "portfolio",
+          "title": "Portfolio",
+          "description": "",
+          "date": {
+            "start": "2025-03",
+            "end": "present"
+          },
+          "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+          "github": "https://github.com/zzafergok/portfolio",
+          "url": "",
+          "image": "/images/projects/portfolio.jpg"
+        },
+        {
+          "id": "my-hr-app",
+          "title": "My HR App",
+          "description": "",
+          "date": {
+            "start": "2024-02",
+            "end": "present"
+          },
+          "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+          "github": "https://github.com/zzafergok/my-hr-app",
+          "url": "",
+          "image": "/images/projects/my-hr-app.jpg"
+        },
+        {
+          "id": "newsapi-tesla-react",
+          "title": "News API Tesla React App",
+          "description": "",
+          "date": {
+            "start": "2022-06",
+            "end": "2022-06"
+          },
+          "technologies": ["React.js", "JavaScript", "Sass"],
+          "github": "https://github.com/zzafergok/sample-newsapi-tesla-react-app",
+          "url": "",
+          "image": "/images/projects/newsapi-tesla-react.jpg"
+        },
+        {
+          "id": "newsapi-tesla-vue",
+          "title": "News API Tesla Vue App",
+          "description": "",
+          "date": {
+            "start": "2022-06",
+            "end": "2022-06"
+          },
+          "technologies": ["Vue.js", "JavaScript", "Sass"],
+          "github": "https://github.com/zzafergok/sample-newsapi-tesla-vue-app",
+          "url": "",
+          "image": "/images/projects/newsapi-tesla-vue.jpg"
+        },
+        {
+          "id": "covidlist",
+          "title": "Covid List",
+          "description": "",
+          "date": {
+            "start": "2021-11",
+            "end": "2021-11"
+          },
+          "technologies": ["React.js", "TypeScript", "CSS"],
+          "github": "https://github.com/zzafergok/covidlist",
+          "url": "",
+          "image": "/images/projects/covidlist.jpg"
+        },
+        {
+          "id": "jetflix",
+          "title": "Jetflix School Project",
+          "description": "",
+          "date": {
+            "start": "2021-06",
+            "end": "2021-06"
+          },
+          "technologies": ["Flutter", "Dart"],
+          "github": "https://github.com/zzafergok/jetflix-school-project",
+          "url": "",
+          "image": "/images/projects/jetflix.jpg"
+        },
+        {
+          "id": "project-stark",
+          "title": "Project Stark",
+          "description": "",
+          "date": {
+            "start": "2021-01",
+            "end": "2021-01"
+          },
+          "technologies": ["Flutter", "Dart"],
+          "github": "https://github.com/zzafergok/project_stark",
+          "url": "",
+          "image": "/images/projects/project-stark.jpg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,13 @@
 import React from 'react';
+
 import { Tooltip } from '@/components/ui/Tooltip';
-import { BlogPage } from './blog.type';
-import { isLessThan, useWindowSize } from '@/hooks/useWindowSize';
-import { blogSubTitles } from '@/data/blogContentData';
+
 import ViewCounter from './ViewCounter';
+
+import { BlogPage } from './blog.type';
+import { blogSubTitles } from '@/data/blogContentData';
+
+import { isLessThan, useWindowSize } from '@/hooks/useWindowSize';
 
 interface BlogSidebarProps {
   blogs: BlogPage[];
@@ -35,8 +39,9 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({
         {blogs.map((blog) => (
           <Tooltip
             key={blog.id}
+            delayDuration={500}
             content={blog.title}
-            placement={isMobile ? 'bottom' : 'right'}
+            side={isMobile ? 'bottom' : 'right'}
           >
             <button
               onClick={() => onSelectBlog(blog.id)}

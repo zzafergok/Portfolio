@@ -3,7 +3,7 @@
 import BaseCard from '@/components/cards/BaseCard';
 
 import { motion } from 'framer-motion';
-import { Cat, Code, Phone, Folder, FileEdit, ArrowRight } from 'lucide-react';
+import { Code, Phone, Folder, FileEdit } from 'lucide-react';
 
 /**
  * Dashboard page component that serves as homepage
@@ -28,11 +28,11 @@ export default function Dashboard() {
       bgColor: 'bg-primary-600',
     },
     {
-      id: 'skills',
-      title: 'Yetenekler',
+      id: 'resume',
+      title: 'Özgeçmiş',
       description:
-        'Teknik becerilerim, kullandığım teknolojiler, araçlar ve metodolojiler.',
-      href: '/skills',
+        'Profesyonel deneyimlerim, eğitim geçmişim ve uzmanlık alanlarımı içeren kapsamlı kariyer profilim. Frontend geliştirme alanındaki yetkinliklerim ve çalıştığım projeler hakkında detaylı bilgi.',
+      href: '/resume',
       icon: <Code size={20} />,
       bgColor: 'bg-secondary-500',
     },

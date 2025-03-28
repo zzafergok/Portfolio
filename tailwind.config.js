@@ -97,6 +97,11 @@ module.exports = {
       animation: {
         gradient: 'gradient 8s ease infinite',
         float: 'float 3s ease-in-out infinite',
+        fadeIn: 'fadeIn 150ms ease-out',
+        fadeInDown: 'fadeInDown 150ms ease-out',
+        fadeInUp: 'fadeInUp 150ms ease-out',
+        fadeInLeft: 'fadeInLeft 150ms ease-out',
+        fadeInRight: 'fadeInRight 150ms ease-out',
       },
       keyframes: {
         gradient: {
@@ -106,6 +111,26 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 0.9 },
+        },
+        fadeInDown: {
+          from: { opacity: 0, transform: 'translateY(-4px)' },
+          to: { opacity: 0.9, transform: 'translateY(0)' },
+        },
+        fadeInUp: {
+          from: { opacity: 0, transform: 'translateY(4px)' },
+          to: { opacity: 0.9, transform: 'translateY(0)' },
+        },
+        fadeInLeft: {
+          from: { opacity: 0, transform: 'translateX(4px)' },
+          to: { opacity: 0.9, transform: 'translateX(0)' },
+        },
+        fadeInRight: {
+          from: { opacity: 0, transform: 'translateX(-4px)' },
+          to: { opacity: 0.9, transform: 'translateX(0)' },
         },
       },
       borderRadius: {
