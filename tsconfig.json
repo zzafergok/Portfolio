@@ -27,6 +27,7 @@
       "@/utils": ["./src/utils"],
       "@/types": ["./src/types"],
       "@/styles": ["./src/styles"],
+      "@/context": ["./src/context"],
       "@/components": ["./src/components"]
     }
   },
